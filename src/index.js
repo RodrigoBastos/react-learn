@@ -2,9 +2,25 @@ import ReactDOM from 'react-dom';
 import React, {Component} from 'react';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      contador: 0
+    };
+  };
+
+  _somarContador () {
+    this.setState({
+      contador: this.state.contador + 1
+    });
+  };
+
   render () {
     return (
-      <h1>Hello World</h1>
+    <div>
+        <p>A soma é {this.state.contador}</p>
+        <button onClick={() => this._somarContador()}>SOMAR!</button>
+    </div>
     );
   };
 };
